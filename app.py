@@ -73,7 +73,7 @@ def get_ssr():
 
         #text = '{ "v": "2", "ps": "JPE2", "add": "52.140.199.214", "port": "47330", "id": "b0f229a6-f383-40f0-b467-79ff45973320", "aid": "0", "scy": "auto", "net": "tcp", "type": "none", "host": "", "path": "", "tls": "", "sni": "", "alpn": "", "fp": "" }'
         encoded_text =  base64.b64encode(json_str.encode('utf-8'))    
-        return 'ssr://'+ encoded_text.decode('utf-8')
+        return 'ss://'+ encoded_text.decode('utf-8')
     else:
         return "it's fresh here"
     
