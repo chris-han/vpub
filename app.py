@@ -74,6 +74,8 @@ def updateip():
                 json_item_template = '{ "v": "2", "ps": "USW2", "add": "", "port": "47330", "id": "1a6511b4-6bfa-4836-896f-51f66491250f", "aid": "0", "scy": "auto", "net": "tcp", "type": "none", "host": "", "path": "", "tls": "", "sni": "", "alpn": "", "fp": "" }'
             case "JPE2":
                 json_item_template = '{ "v": "2", "ps": "JPE2", "add": "", "port": "47330", "id": "b0f229a6-f383-40f0-b467-79ff45973320", "aid": "0", "scy": "auto", "net": "tcp", "type": "none", "host": "", "path": "", "tls": "", "sni": "", "alpn": "", "fp": "" }'
+            case "JPW2":
+                json_item_template = '{ "v": "2", "ps": "JPW2", "add": "", "port": "47330", "id": "5510ab0e-a138-4e22-9303-d2e854266728", "aid": "0", "scy": "auto", "net": "tcp", "type": "none", "host": "", "path": "", "tls": "", "sni": "", "alpn": "", "fp": "" }'
         #swtch by loc to update the ip, if loc='usw2' then use usw2 json_usw2 string, if loc='jep' then use json_jep string
         new_obj  = json.loads(json_item_template)
         new_obj['add'] = addr
