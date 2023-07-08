@@ -17,22 +17,8 @@ def home():
 def about():
     return 'this is a ledder to freedom'
 
-@app.route("/get_config", methods=['GET'])  
-def base64_encode():
-
-    """     
-    if request.method == 'POST':
-        text = request.form['text']
-        encoded_text = base64.b64encode(text.encode('utf-8'))
-        return encoded_text.decode('utf-8')
-    else:
-        return '''
-            <form method="POST">
-                Text: <input name="text">
-                <input type="submit">
-            </form>
-        ''' 
-    """
+@app.route("/get_servers", methods=['GET'])  
+def get_servers():
     #temp_file_path = os.path.join(tempfile.gettempdir(), 'v2ray_config.json')
     json_list = load_v2ray_config()
     if json_list is not None:
@@ -52,14 +38,6 @@ def base64_encode():
 
         ret = ''.join(result)
         return ret
-        
-
-
-
-        #json_str = json.dumps(json_list)
-        #text = '{ "v": "2", "ps": "JPE2", "add": "52.140.199.214", "port": "47330", "id": "b0f229a6-f383-40f0-b467-79ff45973320", "aid": "0", "scy": "auto", "net": "tcp", "type": "none", "host": "", "path": "", "tls": "", "sni": "", "alpn": "", "fp": "" }'
-        #encoded_text =  base64.b64encode(json_str.encode('utf-8'))    
-        #return 'vmess://'+ encoded_text.decode('utf-8')
     else:
         return "it's fresh here"
 
@@ -92,10 +70,6 @@ def updateip():
             # Append the new object
             json_list=[new_obj]
 
-
-
-            
-
         # Encode to base64    
         b64_json = base64.b64encode(json.dumps(json_list).encode())
 
@@ -104,7 +78,7 @@ def updateip():
         with open(temp_file_path, 'wb') as f:
             f.write(b64_json)
         
-        return 'ok'
+        return 'IP address updated successfully'
     else:
         return '''
             <form method="POST">
